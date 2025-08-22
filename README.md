@@ -15,4 +15,17 @@ A curated set of Jupyter notebooks showing how to **deploy ML models**, track ex
 ```bash
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+
 ```
+
+## handy make targets
+```bash
+make run-api        # start FastAPI
+make test           # run pytest
+make docker-build   # build image
+make docker-run     # run container on :8000
+make mlflow-ui      # open MLflow UI (if you’ve run notebook 05/07)
+
+```
+
